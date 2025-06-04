@@ -68,7 +68,6 @@ class SVM():
         self.b = 0
 
         for epoch in range(self.epochs):
-            # 计算 margins
             margin = y * (X @ self.w + self.b)
             misclassified = margin < 1
 
