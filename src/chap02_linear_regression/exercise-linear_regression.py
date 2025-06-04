@@ -140,7 +140,6 @@ def least_squares(phi, y, alpha=0.0, solver="pinv"):
         U, s, Vt = np.linalg.svd(phi, full_matrices=False)
         # 计算正则化的 SVD 解
         s_reg = s / (s**2 + alpha)
-        # 构建对角矩阵
         S_reg = np.zeros((n_features, n_samples))
         np.fill_diagonal(S_reg, s_reg)
         w = Vt.T @ S_reg @ U.T @ y
