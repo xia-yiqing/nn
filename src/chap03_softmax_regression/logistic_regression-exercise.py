@@ -54,7 +54,6 @@ data_set = np.concatenate((C1, C2), axis=0)
 np.random.shuffle(data_set)
 
 
-# ## 建立模型
 # 建立模型类，定义loss函数，定义一步梯度下降过程函数
 # 填空一：实现sigmoid的交叉熵损失函数(不使用tf内置的loss 函数)
 # In[37]:
