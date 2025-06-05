@@ -42,7 +42,8 @@ def multinomial_basis(x, feature_num=10):
     # todo '''请实现多项式基函数'''
     # 在 x 的最后一个维度上增加一个维度，将其转换为三维数组
     # 通过列表推导式创建各次项，最后在列方向拼接合并
-    x = np.expand_dims(x, axis=1)  # shape(N, 1)
+    x = np.expand_dims(x, axis=1)  
+    # shape(N, 1)
     # 生成 1, x, x^2, ..., x^(feature_num-1)
     ret = [x**i for i in range(1, feature_num + 1)]
     # 将生成的列表合并成 shape(N, feature_num) 的二维数组
@@ -236,8 +237,10 @@ if __name__ == "__main__":
     x_test, y_test = load_data(
         test_file
     )  # 从文件加载测试数据，返回特征矩阵x_test和标签向量y_test
-    print(x_train.shape)  # x_train.shape 返回训练集特征矩阵的维度信息
-    print(x_test.shape)  # x_test.shape 返回测试集特征矩阵的维度信息
+    print(x_train.shape)  
+    # x_train.shape 返回训练集特征矩阵的维度信息
+    print(x_test.shape)  
+    # x_test.shape 返回测试集特征矩阵的维度信息
 
     # 使用线性回归训练模型，返回一个函数 f() 使得 y = f(x)
     # f: 预测函数 y = f(x)
@@ -245,8 +248,10 @@ if __name__ == "__main__":
     # w_gd: 通过梯度下降法得到的权重向量
     f, w_lsq, w_gd = main(x_train, y_train)
 
-    y_train_pred = f(x_train)  # 对训练数据应用预测函数
-    std = evaluate(y_train, y_train_pred)  # 计算预测值与真实值的标准差作为评估指标
+    y_train_pred = f(x_train)  
+    # 对训练数据应用预测函数
+    std = evaluate(y_train, y_train_pred)  
+    # 计算预测值与真实值的标准差作为评估指标
     print("训练集预测值与真实值的标准差：{:.1f}".format(std))
 
     # 计算预测的输出值
