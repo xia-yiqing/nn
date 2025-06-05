@@ -17,10 +17,14 @@ def identity_basis(x):
 def multinomial_basis(x, feature_num=10):
     """多项式基函数"""
     x = np.expand_dims(x, axis=1)  # shape(N, 1)
+    #将一维数组x变为二维数组
     feat = [x]
+    #初始化特征列表
     for i in range(2, feature_num + 1):
         feat.append(x**i)
+        #生成高次项
     ret = np.concatenate(feat, axis=1)
+    #合并特征
     return ret
 
 
