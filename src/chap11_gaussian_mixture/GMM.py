@@ -41,7 +41,7 @@ def generate_data(n_samples=1000):
          # 添加对应标签
         y_true.extend([i] * samples_per_component[i]) 
     
-    # 合并并打乱数据
+    #合并并打乱数据
     #将多个子数据集合并为一个完整数据集
     X = np.vstack(X_list)  
      #将Python列表转换为NumPy数组
