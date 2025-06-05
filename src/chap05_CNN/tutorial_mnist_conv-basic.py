@@ -17,6 +17,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # or any {'0', '1', '2'}
 
 def mnist_dataset():
     (x, y), (x_test, y_test) = datasets.mnist.load_data()
+    #加载原始MNIST数据
     x = x.reshape(x.shape[0], 28, 28,1)
     x_test = x_test.reshape(x_test.shape[0], 28, 28,1)
     
