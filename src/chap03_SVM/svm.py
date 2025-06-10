@@ -65,7 +65,7 @@ class SVM:
 
             # 计算梯度
             # L2正则化项 + 错误分类样本的平均梯度
-            dw = (2 * self.reg_lambda * self.w) - np.mean(y[idx].reshape(-1, 1) * X[idx], axis = 0)
+            dw = (2 * self.reg_lambda * self.w) - np.mean(y[idx].reshape(-1, 1) * X[idx], axis = 0) # reshape(-1,1) 确保 y 能与 X 正确广播计算
             db = -np.mean(y[idx])
 
             # 参数更新
